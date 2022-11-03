@@ -1,0 +1,28 @@
+@import '../utils/variables';
+
+#nav-bar {
+    width: 100vw;
+    @include flexCenter(row);
+    justify-content: space-between;
+    background-color: $semi-dark-blue;
+    padding: 20px;
+
+    #nav-items {
+        @include flexCenter(row);
+        img {
+            padding: 0 10px 0 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    #account {
+        #avatar {
+            width: 33px;
+            border: 2px $white solid;
+            border-radius: 100%;
+        }
+    }
+}

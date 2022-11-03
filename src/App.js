@@ -1,7 +1,26 @@
+// import axios from 'axios';
+// import { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/pages/Home';
+import './main.scss';
+
 function App() {
     return (
         <div className="App">
-            <h1>Entertainment App</h1>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    {/* <Route path="/admin" element={<Admin />} />
+                <Route
+                    path="/admin/trial"
+                    element={<AddEditTrial trials={trials} />}
+                />
+                <Route
+                    path="/admin/round"
+                    element={<AddEditRound trials={trials} rounds={rounds} />}
+                /> */}
+                </Routes>
+            </Router>
         </div>
     );
 }
