@@ -1,0 +1,20 @@
+service: entertainment-app
+provider:
+  name: aws
+  runtime: nodejs16.x
+  region: us-east-1
+  stage: ${opt:stage, 'dev'}
+  timeout: '30'
+  memorySize: '256'
+
+functions:
+  listMedia:
+    handler: handler.listMedia
+    events:
+      - http:
+          path: entertainment-app/
+          method: get
+          cors:
+            origin: '*'
+    environment:
+      NODE_ENV: ${self:provider.stage}

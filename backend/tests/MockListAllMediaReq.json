@@ -1,0 +1,6 @@
+{
+  "resource": "/entertainment-app/",
+  "path": "/entertainment-app/",
+  "httpMethod": "GET",
+  "runPhase": "TEST"
+}

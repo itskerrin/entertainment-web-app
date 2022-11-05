@@ -1,0 +1,26 @@
+{
+  "name": "entertainment-app-backend",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11",
+    "@shelf/jest-dynamodb": "^2.2.3",
+    "aws-sdk": "^2.658.0",
+    "axios": "^0.21.1",
+    "babel-jest": "^27.5.1",
+    "dotenv": "^8.2.0",
+    "uuid": "^8.3.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/core": "*",
+    "@babel/preset-env": "*",
+    "aws-sdk": "^2.963.0",
+    "aws-sdk-mock": "^5.2.1",
+    "axios": "^0.21.1",
+    "babel-jest": "*"
+  }
+}
