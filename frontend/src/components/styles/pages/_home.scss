@@ -1,0 +1,7 @@
+@import '../utils/variables';
+
+#scrolling-container {
+    height: 140px;
+    overflow: auto;
+    white-space: nowrap;
+}

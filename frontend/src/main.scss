@@ -5,7 +5,9 @@
 // components
 @import './components/styles/components/nav';
 @import './components/styles/components/searchbar';
-@import './components/styles/components/trending';
+@import './components/styles/components/thumbnaillarge';
+@import './components/styles/utils/layout';
+@import './components/styles/pages/home';
 
 * {
     margin: 0;

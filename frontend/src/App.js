@@ -6,18 +6,17 @@ import './main.scss';
 
 function App() {
     const axios = require('axios');
-    const [moviesAndShows, setMoviesAndShows] = useState([]);
+    const [moviesAndShows, setMoviesAndShows] = useState(['1', '2', '3']);
     const [isLoading, setIsLoading] = useState(true);
 
-    const moviesAndShowsURL = '#';
+    const moviesAndShowsURL = '.';
     // 'https://spmyirwfx4.execute-api.us-east-1.amazonaws.com/dev/entertainment-app';
 
     useEffect(() => {
         (async () => {
             try {
                 const response = await axios.get(moviesAndShowsURL);
-                console.log(response);
-                setMoviesAndShows(response.data);
+                // setMoviesAndShows(response.data);
             } catch (error) {
                 console.error(error);
             }

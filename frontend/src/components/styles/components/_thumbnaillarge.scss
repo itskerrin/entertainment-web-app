@@ -1,0 +1,24 @@
+@import '../utils/variables';
+
+// thumbnail-container
+// thumbnail-large
+// lrg-info
+// lrg-title
+
+#thumbnail-container {
+    position: relative;
+    height: 100%;
+    width: 240px;
+
+    img {
+        width: 100%;
+        border: 1px solid transparent;
+        border-radius: 8px;
+    }
+}
+
+#lrg-info-wrapper {
+    position: absolute;
+    bottom: 0px;
+    left: 16px;
+}
