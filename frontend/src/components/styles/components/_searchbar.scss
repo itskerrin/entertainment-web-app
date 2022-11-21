@@ -6,7 +6,12 @@
     padding: 30px 20px;
 
     #search-icon {
-        margin-right: 12px;
+        margin-right: 21px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     #search-form {
@@ -14,7 +19,7 @@
             background-color: $dark-blue;
             border: 1px solid $dark-blue;
             font-weight: 300;
-            font-size: 19px;
+            font-size: 16px;
             color: $grey-blue;
             width: 300px;
             caret-color: $red;

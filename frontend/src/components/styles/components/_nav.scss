@@ -1,8 +1,9 @@
 @import '../utils/variables';
 
 #nav-bar {
-    width: 100vw;
     @include flexCenter(row);
+    width: 100vw;
+    height: 56px;
     justify-content: space-between;
     background-color: $semi-dark-blue;
     padding: 20px;

@@ -1,7 +1,32 @@
 @import '../utils/variables';
 
 #scrolling-container {
-    height: 140px;
+    @include flex(row);
+    height: 150px;
     overflow: auto;
     white-space: nowrap;
+    margin: 20px 0;
+}
+
+#home-container {
+    margin-left: 18px;
+
+    #trending-title,
+    #recommended-title {
+        font-weight: 300;
+        font-size: 23px;
+        line-height: 25px;
+        letter-spacing: -0.3125px;
+    }
+
+    #main-content {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 6px;
+        padding: 6px;
+        margin-right: 18px;
+
+        .grid-item {
+        }
+    }
 }

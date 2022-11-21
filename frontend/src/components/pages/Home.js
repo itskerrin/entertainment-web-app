@@ -13,6 +13,7 @@ import logo from '../../assets/logo.svg';
 import '../styles/components/_searchbar.scss';
 import '../styles/components/_nav.scss';
 import '../styles/utils/_layout.scss';
+import Thumbnail from '../Thumbnail';
 import ThumbnailLarge from '../ThumbnailLarge';
 
 const Home = ({ isLoading, moviesAndShows }) => {
@@ -102,9 +103,9 @@ const Home = ({ isLoading, moviesAndShows }) => {
                     ) : content === 'bookmarked' ? (
                         <Bookmarked />
                     ) : (
-                        <div id="container">
+                        <div id="home-container">
                             <div>
-                                <h1>Trending</h1>
+                                <h1 id="trending-title">Trending</h1>
                                 <div id="scrolling-container">
                                     {/* {moviesAndShows.map(
                                         (trending, idx) =>
@@ -119,7 +120,23 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                 </div>
                             </div>
                             <div>
-                                <h1>Recommended for you</h1>
+                                <h1 id="recommended-title">
+                                    Recommended for you
+                                </h1>
+                                <div id="main-content">
+                                    <div className="grid-item">
+                                        <Thumbnail />
+                                    </div>
+                                    <div className="grid-item">
+                                        <Thumbnail />
+                                    </div>
+                                    <div className="grid-item">
+                                        <Thumbnail />
+                                    </div>
+                                    <div className="grid-item">
+                                        <Thumbnail />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     )}
