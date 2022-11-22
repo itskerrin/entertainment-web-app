@@ -6,3 +6,40 @@
     border-radius: 8px;
     background-size: cover;
 }
+
+#info-wrapper {
+    padding: 10px 0;
+
+    #info {
+        @include flex(row);
+        align-items: center;
+
+        p {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            margin: 0;
+            opacity: 0.75;
+
+            img {
+                width: 20%;
+                border-radius: 0;
+                margin-right: 3px;
+            }
+        }
+
+        span {
+            padding: 0 7px;
+        }
+
+        #category {
+            @include flexCenter(row);
+        }
+    }
+
+    #title {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+    }
+}

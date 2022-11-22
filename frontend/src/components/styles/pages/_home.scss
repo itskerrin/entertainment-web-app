@@ -22,11 +22,8 @@
     #main-content {
         display: grid;
         grid-template-columns: auto auto;
-        grid-gap: 6px;
-        padding: 6px;
+        grid-gap: 12px;
         margin-right: 18px;
-
-        .grid-item {
-        }
+        margin-top: 20px;
     }
 }
