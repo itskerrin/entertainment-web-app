@@ -6,17 +6,17 @@ import './main.scss';
 
 function App() {
     const axios = require('axios');
-    const [moviesAndShows, setMoviesAndShows] = useState(['1', '2', '3']);
+    const [moviesAndShows, setMoviesAndShows] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const moviesAndShowsURL = '.';
-    // 'https://spmyirwfx4.execute-api.us-east-1.amazonaws.com/dev/entertainment-app';
+    const moviesAndShowsURL =
+        'https://spmyirwfx4.execute-api.us-east-1.amazonaws.com/dev/entertainment-app';
 
     useEffect(() => {
         (async () => {
             try {
                 const response = await axios.get(moviesAndShowsURL);
-                // setMoviesAndShows(response.data);
+                setMoviesAndShows(response.data);
             } catch (error) {
                 console.error(error);
             }
@@ -24,7 +24,7 @@ function App() {
     }, []);
 
     useEffect(() => {
-        moviesAndShows.length > 0 ? setIsLoading(false) : setIsLoading(false);
+        moviesAndShows.length > 0 ? setIsLoading(false) : setIsLoading(true);
     }, [moviesAndShows]);
 
     useEffect(() => {

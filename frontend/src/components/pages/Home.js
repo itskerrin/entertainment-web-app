@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
-import Movies from '../Movies';
+import ThumbnailLarge from '../ThumbnailLarge';
 import Bookmarked from '../Bookmarked';
+import Thumbnail from '../Thumbnail';
 import TVShows from '../TVShows';
+import Movies from '../Movies';
 import bookmarks from '../../assets/icon-nav-bookmark.svg';
 import movies from '../../assets/icon-nav-movies.svg';
 import tv from '../../assets/icon-nav-tv-series.svg';
@@ -13,8 +15,6 @@ import logo from '../../assets/logo.svg';
 import '../styles/components/_searchbar.scss';
 import '../styles/components/_nav.scss';
 import '../styles/utils/_layout.scss';
-import Thumbnail from '../Thumbnail';
-import ThumbnailLarge from '../ThumbnailLarge';
 
 const Home = ({ isLoading, moviesAndShows }) => {
     const [content, setContent] = useState('home');
@@ -107,16 +107,12 @@ const Home = ({ isLoading, moviesAndShows }) => {
                             <div>
                                 <h1 id="trending-title">Trending</h1>
                                 <div id="scrolling-container">
-                                    {/* {moviesAndShows.map(
-                                        (trending, idx) =>
-                                            trending.title ===
-                                                'During the Hunt' && ( */}
-                                    <ThumbnailLarge
-                                    // trending={trending}
-                                    // key={idx}
-                                    />
-                                    {/* ) */}
-                                    {/* )} */}
+                                    {moviesAndShows.map((trending, idx) => (
+                                        <ThumbnailLarge
+                                            trending={trending}
+                                            key={idx}
+                                        />
+                                    ))}
                                 </div>
                             </div>
                             <div>
@@ -124,18 +120,18 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                     Recommended for you
                                 </h1>
                                 <div id="main-content">
-                                    <div className="grid-item">
-                                        <Thumbnail />
-                                    </div>
-                                    <div className="grid-item">
-                                        <Thumbnail />
-                                    </div>
-                                    <div className="grid-item">
-                                        <Thumbnail />
-                                    </div>
-                                    <div className="grid-item">
-                                        <Thumbnail />
-                                    </div>
+                                    {moviesAndShows.map(
+                                        (movieOrTVShow, idx) => (
+                                            <div className="grid-item">
+                                                <Thumbnail
+                                                    movieOrTVShow={
+                                                        movieOrTVShow
+                                                    }
+                                                    key={idx}
+                                                />
+                                            </div>
+                                        )
+                                    )}
                                 </div>
                             </div>
                         </div>
