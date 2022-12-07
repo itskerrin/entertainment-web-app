@@ -18,10 +18,11 @@ import '../styles/utils/_layout.scss';
 
 const Home = ({ isLoading, moviesAndShows }) => {
     const [content, setContent] = useState('home');
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         console.log(moviesAndShows);
-    });
+    }, [moviesAndShows]);
 
     return (
         <div>
@@ -91,11 +92,14 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                     type="text"
                                     name="search"
                                     placeholder="Search for movies or TV series"
+                                    onChange={(e) =>
+                                        setSearchTerm(e.target.value)
+                                    }
                                 />
                             </form>
                         </div>
                     </div>
-                    {/* content */}
+                    {/* main content */}
                     {content === 'movies' ? (
                         <Movies />
                     ) : content === 'tv' ? (
@@ -120,8 +124,16 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                     Recommended for you
                                 </h1>
                                 <div id="main-content">
-                                    {moviesAndShows.map(
-                                        (movieOrTVShow, idx) => (
+                                    {moviesAndShows
+                                        .filter((result) => {
+                                            return searchTerm.toLowerCase() ===
+                                                ''
+                                                ? result
+                                                : result.title
+                                                      .toLowerCase()
+                                                      .includes(searchTerm);
+                                        })
+                                        .map((movieOrTVShow, idx) => (
                                             <div className="grid-item">
                                                 <Thumbnail
                                                     movieOrTVShow={
@@ -130,8 +142,7 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                                     key={idx}
                                                 />
                                             </div>
-                                        )
-                                    )}
+                                        ))}
                                 </div>
                             </div>
                         </div>
