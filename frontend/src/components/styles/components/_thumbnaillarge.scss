@@ -8,6 +8,13 @@
     margin-right: 16px;
     border-radius: 8px;
     background-size: cover;
+
+    @media (min-width: 768px) {
+        height: 230px;
+        width: 470px;
+        min-width: 470px;
+        margin-right: 21px;
+    }
 }
 
 #lrg-info-wrapper {

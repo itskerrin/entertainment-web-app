@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ThreeDots } from 'react-loader-spinner';
 import ThumbnailLarge from '../ThumbnailLarge';
 import Bookmarked from '../Bookmarked';
@@ -19,10 +19,6 @@ import '../styles/utils/_layout.scss';
 const Home = ({ isLoading, moviesAndShows }) => {
     const [content, setContent] = useState('home');
     const [searchTerm, setSearchTerm] = useState('');
-
-    useEffect(() => {
-        console.log(moviesAndShows);
-    }, [moviesAndShows]);
 
     return (
         <div>
@@ -101,11 +97,20 @@ const Home = ({ isLoading, moviesAndShows }) => {
                     </div>
                     {/* main content */}
                     {content === 'movies' ? (
-                        <Movies />
+                        <Movies
+                            moviesAndShows={moviesAndShows}
+                            searchTerm={searchTerm}
+                        />
                     ) : content === 'tv' ? (
-                        <TVShows />
+                        <TVShows
+                            moviesAndShows={moviesAndShows}
+                            searchTerm={searchTerm}
+                        />
                     ) : content === 'bookmarked' ? (
-                        <Bookmarked />
+                        <Bookmarked
+                            moviesAndShows={moviesAndShows}
+                            searchTerm={searchTerm}
+                        />
                     ) : (
                         <div id="home-container">
                             <div>
@@ -134,12 +139,14 @@ const Home = ({ isLoading, moviesAndShows }) => {
                                                       .includes(searchTerm);
                                         })
                                         .map((movieOrTVShow, idx) => (
-                                            <div className="grid-item">
+                                            <div
+                                                className="grid-item"
+                                                key={idx}
+                                            >
                                                 <Thumbnail
                                                     movieOrTVShow={
                                                         movieOrTVShow
                                                     }
-                                                    key={idx}
                                                 />
                                             </div>
                                         ))}

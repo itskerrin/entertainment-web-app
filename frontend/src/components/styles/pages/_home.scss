@@ -6,6 +6,10 @@
     overflow: auto;
     white-space: nowrap;
     margin: 20px 0;
+
+    @media (min-width: 768px) {
+        height: 230px;
+    }
 }
 
 #home-container {
@@ -26,5 +30,9 @@
         margin-right: 18px;
         margin-top: 20px;
         height: 400px;
+
+        @media (min-width: 768px) {
+            grid-template-columns: auto auto auto;
+        }
     }
 }
