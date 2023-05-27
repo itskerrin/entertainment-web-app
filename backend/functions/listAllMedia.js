@@ -19,6 +19,7 @@ const listAllMedia = async () => {
     .promise()
     .catch((error) => console.log(error));
 
+  // console.log(response.Items);
   return response.Items;
 };
 
