@@ -1,21 +1,25 @@
 #tv-title {
-    font-weight: 300;
-    font-size: 23px;
-    line-height: 25px;
-    letter-spacing: -0.3125px;
-    margin: 0 0 30px 18px;
+  font-weight: 300;
+  font-size: 23px;
+  line-height: 25px;
+  letter-spacing: -0.3125px;
+  margin: 0 0 30px 18px;
 }
 
 #tv-content {
-    margin: 18px;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 12px;
-    margin-right: 18px;
-    margin-top: 20px;
-    height: 400px;
+  margin: 18px;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 12px;
+  margin-right: 18px;
+  margin-top: 20px;
+  height: 400px;
 
-    @media (min-width: 768px) {
-        grid-template-columns: auto auto auto;
-    }
+  @media (min-width: 768px) {
+    grid-template-columns: auto auto auto;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: auto auto auto auto;
+  }
 }

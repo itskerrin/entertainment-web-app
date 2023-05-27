@@ -1,38 +1,44 @@
 @import '../utils/variables';
 
 #scrolling-container {
-    @include flex(row);
-    height: 150px;
-    overflow: auto;
-    white-space: nowrap;
-    margin: 20px 0;
+  @include flex(row);
+  height: 150px;
+  overflow: auto;
+  white-space: nowrap;
+  margin: 20px 0;
 
-    @media (min-width: 768px) {
-        height: 230px;
-    }
+  @media (min-width: 768px) {
+    height: 230px;
+  }
 }
 
 #home-container {
-    margin-left: 18px;
+  margin-left: 18px;
 
-    #trending-title,
-    #recommended-title {
-        font-weight: 300;
-        font-size: 23px;
-        line-height: 25px;
-        letter-spacing: -0.3125px;
+  #trending-title,
+  #recommended-title {
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 25px;
+    letter-spacing: -0.3125px;
+  }
+
+  #main-content {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
+    margin-right: 18px;
+    margin-top: 20px;
+    height: 400px;
+
+    // Tablet
+    @media (min-width: 768px) {
+      grid-template-columns: auto auto auto;
     }
 
-    #main-content {
-        display: grid;
-        grid-template-columns: auto auto;
-        grid-gap: 12px;
-        margin-right: 18px;
-        margin-top: 20px;
-        height: 400px;
-
-        @media (min-width: 768px) {
-            grid-template-columns: auto auto auto;
-        }
+    // Desktop
+    @media (min-width: 1024px) {
+      grid-template-columns: auto auto auto auto;
     }
+  }
 }
